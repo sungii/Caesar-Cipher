@@ -1,5 +1,7 @@
 # Caesar-Cipher
 
-Encryption of a string with a Caesar-Cipher. </br>
-Input: string plaintext (using char a-z and A-Z, NO SYMBOLS) + int key (numbers from 0-25) </br>
-Output: string ciphertext (outputs the Ciphertext) </br>
+Encryption/Decryption of a text with a Caesar-Cipher: </br> </br>
+
+Hints: </br>
+Input: string text (using char a-z and A-Z, NO SYMBOLS or WHITESPACE) + int key </br>
+Output: string text (outputs the Ciphertext) </br>
