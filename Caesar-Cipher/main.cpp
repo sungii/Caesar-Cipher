@@ -4,27 +4,39 @@ int main() {
 	string input;
 	string key;
 	do {
-		string output = "";
-		cout << "Plaintext: ";
-		cin >> input;
+		string output;
+		int option;
 
-		if (input == "exit")
+		//Main Dialog
+		cout << "----------Caesar Cipher----------" << endl
+			 << "(1) Encrypt a text" << endl
+			 << "(2) Decrypt a text" << endl
+			 << "(0) Exit " << endl << endl;
+		cout << "Option: ";
+		cin >> option;
+
+		//Exit Dialog
+		if (option != 1 && option != 2)
 			break;
 		
+		if(option == 1)
+			cout << "Plaintext: ";
+		else
+			cout << "Ciphertext: ";
+
+		cin >> input;
 		cout << "Key: ";
 		cin >> key;
 
-		int INT_key = stringToInt(key);
-
-		for (unsigned int i = 0; i < input.length(); i++) {
-			int INT_input = charToInt(input[i]);
-			if (INT_input + INT_key < 26)
-				output += (INT_input + INT_key) + 'a';
-			else
-				output += ((INT_input + INT_key) % 26) + 'a';
+		switch (option) {
+		case 1: output = encrypt(input, key); break;
+		case 2: output = decrypt(input, key); break;
+		default: break;
 		}
 
-		cout << endl << "Ciphertext: " << output << endl;
+		//Output
+		cout << endl << "Ciphertext: " << output << endl
+			 << "---------------------------------" << endl << endl;
 	} while (true);
 
 	return 0;
